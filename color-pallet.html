@@ -1,0 +1,16 @@
+<element name="color-pallet" attributes="red green blue">
+  <template>
+    <ul>
+      <li><input readonly type="text" value="{{red}}"><input type="range" min="0" max="255" value="{{red}}"></li>
+      <li><input readonly type="text" value="{{green}}"><input type="range" min="0" max="255" value="{{green}}"></li>
+      <li><input readonly type="text" value="{{blue}}"><input type="range" min="0" max="255" value="{{blue}}"></li>      
+    </ul>
+  </template>
+  <script>
+    Polymer.register(this, {
+      red: 0,
+      green: 0,
+      blue: 0
+    });
+  </script>
+</element>

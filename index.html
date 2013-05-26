@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="polymer/polymer.js" debug log="bind,watch,ready"></script>
+		<link rel="import" href="color-pallet.html">
+	</head>
+  <body>
+	<color-pallet></color-pallet>
+	<template id="inputArea" repeat="{{animals}}">
+  		<div>
+		    <p>
+				<strong><span style="color: rgb({{color.red}},{{color.green}},{{color.blue}})">{{name}}</span></strong>
+		    </p> 
+		    <input type="text" value="{{name}}" placeholder="Your name here">
+		    <color-pallet red="{{color.red}}" green="{{color.green}}" blue="{{color.blue}}"></color-pallet>
+		</div>
+  	</template>
+    <script>
+    var t = document.getElementById('inputArea');
+    console.log(t);
+    var model = {
+    		animals: [
+    		{
+	    		name: "Giraffe",
+	    		color: {
+		    	  red: 255,
+		    	  green: 255,
+		    	  blue: 0
+	    		}
+    		},
+    		{
+	    		name: "Aardvark",
+	    		color: {
+		    	  red: 255,
+		    	  green: 0,
+		    	  blue: 0
+	    		}   			
+    		}]
+    };
+    console.log(t.model);
+    t.model = model;
+    console.log(t.model);
+    </script>
+  </body>
+</html>
